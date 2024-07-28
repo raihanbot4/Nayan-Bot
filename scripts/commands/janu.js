@@ -12,7 +12,7 @@ module.exports.config = {
 
 module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
-	if (event.body.indexOf("raihan")==0 || event.body.indexOf("rayhan")==0 || event.body.indexOf("Raihan")==0 || event.body.indexOf(", রায়হান")==0) {
+	if (event.body.indexOf("raihan")==0 || event.body.indexOf("Rayhan")==0 || event.body.indexOf("Raihan")==0 || event.body.indexOf("রায়হান")==0) {
 		var msg = {
 				body: "─༅༎•রায়হান জানু তাহ࿐❥",
 				attachment: fs.createReadStream(__dirname + `/cache/janu.mp3`)
