@@ -1,5 +1,5 @@
 module.exports.config = {
-    name: "oii",
+    name: "propose",
     version: "1.0.0",
     hasPermssion: 1,
     credits: "...",
