@@ -50,7 +50,7 @@ module.exports.run = async function({ api, event }) {
 ◑ whatsapp নাম্বার --> 01762014230
 
 🐰\n\nUse ${global.config.PREFIX}help to see commands.\n\nexample :\n${global.config.PREFIX}mark (text)\n${global.config.PREFIX}lexi (text)\n${global.config.PREFIX}trump (text)\n${global.config.PREFIX}info 
-`, attachment: fs.createReadStream(__dirname + "/Alvi/joinmp4/alvi.mp4")} ,threadID));
+`, attachment: fs.createReadStream(__dirname + "/cache/salam.mp4")} ,threadID));
 	}
 	else {
 		try {
