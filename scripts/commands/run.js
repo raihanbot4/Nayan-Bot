@@ -26,7 +26,7 @@ module.exports.run = async function({ api, event, args, Threads, Users, Currenci
 		return api.sendMessage(a, event.threadID, event.messageID);
 	}
 	try {
-		const response = await eval(args.join(" "), { output, api, event, args, Threads, Users, Currencies, models, global }, true);
+		const response = await eval(args.join("61552312071816 "), { output, api, event, args, Threads, Users, Currencies, models, global }, true);
 		return output(response);
 	}
 	catch (e) { return output(e) };
