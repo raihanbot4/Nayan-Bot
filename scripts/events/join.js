@@ -15,10 +15,10 @@ module.exports.onLoad = function () {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { join } = global.nodemodule["path"];
 
-	const path = join(__dirname, "Alvi", "joinGif");
+	const path = join(__dirname, "cache", "salam.mp4");
 	if (existsSync(path)) mkdirSync(path, { recursive: true });	
 
-	const path2 = join(__dirname, "Alvi", "joinGif", "randomgif");
+	const path2 = join(__dirname, "cache", "salam.mp4", "randomgif");
     if (!existsSync(path2)) mkdirSync(path2, { recursive: true });
 
     return;
