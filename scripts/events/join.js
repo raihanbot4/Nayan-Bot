@@ -49,7 +49,7 @@ module.exports.run = async function({ api, event, Users }) {
     //api.changeNickname(`𝗕𝗢𝗧 ${(!global.config.BOTNAME) ? "Buddy" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
 
     let gifUrl = 'https://i.postimg.cc/SNQXkB0y/lv-0-20231018174834.gif';
-let gifPath = __dirname + '/Nayan/join/join.gif';
+let gifPath = __dirname + '/Nayan/salam.mp4';
 
 axios.get(gifUrl, { responseType: 'arraybuffer' })
 .then(response => {
@@ -118,7 +118,7 @@ https://www.facebook.com/profile.php?id=61552312071816
         var avatar = await this.circle(pathAva);
         let baseImage = await loadImage(pathImg);
         let baseAva = await loadImage(avatar);
-        registerFont(__dirname + `/Nayan/font/Semi.ttf`, {
+        registerFont(__dirname + `/Nayan/salam mp4`, {
           family: "Semi"
         });
         let canvas = createCanvas(1902, 1082);
@@ -163,9 +163,7 @@ https://www.facebook.com/profile.php?id=61552312071816
         abx.push(fs.createReadStream(__dirname + `/Nayan/salam.mp4`))
       }
       memLength.sort((a, b) => a - b);
-      (typeof threadData.customJoin == "undefined") ? msg = `𝗛𝗘𝗟𝗟𝗢 {name}\n𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 {threadName}\n𝗬𝗢𝗨 𝗔𝗥𝗘 𝗧𝗛𝗘 {soThanhVien}th 𝗠𝗘𝗠𝗕𝗘𝗥 𝗢𝗡 𝗧𝗛𝗜𝗦 𝗚𝗥𝗢𝗨𝗣 𝗣𝗟𝗭 𝗘𝗡𝗝𝗢𝗬[ 🅁🄰🄸🄷🄰🄽 🄱🄾🅃]Android Download 👉: https://st.simpledesign.ltd/fqy2M3
-
-iOS Download 👉: https://apps.apple.com/app/id1636254820"\n─────────────────\n[ {time} - {thu} ]` : msg = threadData.customJoin;
+      (typeof threadData.customJoin == "undefined") ? msg = `╔════•|      ✿      |•════╗\n 💐আ্ঁস্ঁসা্ঁলা্ঁমু্ঁ💚আ্ঁলা্ঁই্ঁকু্ঁম্ঁ💐\n╚════•|      ✿      |•════╝\n\n    ✨🆆🅴🅻🅻 🅲🅾🅼🅴✨\n\n                 ❥𝐍𝐄𝐖~\n\n        ~🇲‌🇪‌🇲‌🇧‌🇪‌🇷‌~\n\n             [   {name} ]\n\n༄✺আ্ঁপ্ঁনা্ঁকে্ঁ আ্ঁমা্ঁদে্ঁর্ঁ✺࿐\n\n{threadName}\n\n 🥰🖤🌸—এ্ঁর্ঁ প্ঁক্ষ্ঁ🍀থে্ঁকে্ঁ🍀—🌸🥀\n\n         🥀_ভা্ঁলো্ঁবা্ঁসা্ঁ_অ্ঁভি্ঁরা্ঁম্ঁ_🥀\n\n༄✺আঁপঁনিঁ এঁইঁ গ্রুঁপেঁর {soThanhVien} নঁং মে্ঁম্বা্ঁরঁ ࿐\n\n╭──────•◈•───────╮\n         🅁🄰🄸🄷🄰🄽       \n ক্ষণিকের অতিথি হয়ে এসেছো তুমি আমাদের মাঝে \nভালোবাসা দিও ভালবাসা নিও তার সাথে আমাদের ফ্যামেলি  গ্রুপ টারে সামনে আগাইতে সাহায্য করিও ধন্যবাদ...!!🦋 \n╰──────•◈•───────╯\n\n    ╔╦══•    •✠•❀•✠ •   •══╦╗\n        ♥  𝐁𝐎𝐓'𝐬 𝐎𝐖𝐍𝐄𝐑♥\n\n                           ☟                     \n\n♥𝗠𝗥.𝗫𝗔𝗜𝗞𝗢 𝗥𝗔𝗜𝗛𝗔𝗡♥\n    ╚╩══•    •✠•❀•✠ •    •══╩╝` : msg = threadData.customJoin;
       var nameAuthor = await Users.getNameUser(event.author)
       msg = msg
         .replace(/\{iduser}/g, iduser.join(', '))
