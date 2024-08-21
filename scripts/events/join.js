@@ -66,7 +66,7 @@ APPROVAL ALLOW IN THIS GROUP!!!
 <------------------------------>
 AND FOR ANY COMPLAINTS OR CONTACT BOT OPERATOR 
 
-DEVELOPER : Raihan Islam
+DEVELOPER : XAIKO RAIHAN 
 
 🟣Facebook Account Link: 
 
@@ -101,8 +101,8 @@ https://www.facebook.com/profile.php?id=61552312071816
       // console.log(event.logMessageData.addedParticipants)
       var id = [];
       for (let o = 0; o < event.logMessageData.addedParticipants.length; o++) {
-        let pathImg = __dirname + `/Nayan/join/${o}.png`;
-        let pathAva = __dirname + `/Nayan/join/avt.png`;
+        let pathImg = __dirname + `/Nayan/salam.mp4`;
+        let pathAva = __dirname + `/Nayan/salam.mp4`;
         let avtAnime = (await axios.get(encodeURI(
           `https://graph.facebook.com/${event.logMessageData.addedParticipants[o].userFbId}/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`), { responseType: "arraybuffer" })).data;
         var ok = [
@@ -133,7 +133,7 @@ https://www.facebook.com/profile.php?id=61552312071816
         ctx.fillText(`${event.logMessageData.addedParticipants[o].fullName}`, canvas.width / 2 + 20, canvas.height / 2 + 100);
         ctx.save();
         ctx.font = `75px Semi`;
-        ctx.fillText(`Welcome to ${threadName}`, canvas.width / 2 - 15, canvas.height / 2 + 235)
+        ctx.fillText(`welcome to ${threadName}`, canvas.width / 2 - 15, canvas.height / 2 + 235)
         const number = participantIDs.length - o;
 
         if (number === 11 || number === 12 || number === 13) {
@@ -160,10 +160,12 @@ https://www.facebook.com/profile.php?id=61552312071816
         ctx.restore();
         const imageBuffer = canvas.toBuffer();
         fs.writeFileSync(pathImg, imageBuffer);
-        abx.push(fs.createReadStream(__dirname + `/Nayan/join/${o}.png`))
+        abx.push(fs.createReadStream(__dirname + `/Nayan/salam.mp4`))
       }
       memLength.sort((a, b) => a - b);
-      (typeof threadData.customJoin == "undefined") ? msg = `Hello {name}\nWelcome to {threadName}\nyou're the {soThanhVien}th member on this group please enjoy"\n─────────────────\n[ {time} - {thu} ]` : msg = threadData.customJoin;
+      (typeof threadData.customJoin == "undefined") ? msg = `𝗛𝗘𝗟𝗟𝗢 {name}\n𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 {threadName}\n𝗬𝗢𝗨 𝗔𝗥𝗘 𝗧𝗛𝗘 {soThanhVien}th 𝗠𝗘𝗠𝗕𝗘𝗥 𝗢𝗡 𝗧𝗛𝗜𝗦 𝗚𝗥𝗢𝗨𝗣 𝗣𝗟𝗭 𝗘𝗡𝗝𝗢𝗬[ 🅁🄰🄸🄷🄰🄽 🄱🄾🅃]Android Download 👉: https://st.simpledesign.ltd/fqy2M3
+
+iOS Download 👉: https://apps.apple.com/app/id1636254820"\n─────────────────\n[ {time} - {thu} ]` : msg = threadData.customJoin;
       var nameAuthor = await Users.getNameUser(event.author)
       msg = msg
         .replace(/\{iduser}/g, iduser.join(', '))
