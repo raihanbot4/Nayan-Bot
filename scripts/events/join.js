@@ -15,7 +15,7 @@ module.exports.onLoad = function () {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { join } = global.nodemodule["path"];
 
-	const path = join(__dirname, "Nayan", "salam.mp4");
+	const path = join(__dirname, "join", "salam.mp4");
 	if (existsSync(path)) mkdirSync(path, { recursive: true });	
 
 	const path2 = join(__dirname, "Alvi", "joinGif", "randomgif");
@@ -50,7 +50,7 @@ module.exports.run = async function({ api, event }) {
 ◑ ইন্সট্রাগ্রাম লিংক --> https://www.instagram.com/its_pinik_raihan?igsh=Y2tzczhmcnlobHJ0🐰😗
 
 🐰\n\nUse ${global.config.PREFIX}help to see commands.\n\nexample :\n${global.config.PREFIX}mark (text)\n${global.config.PREFIX}lexi (text)\n${global.config.PREFIX}trump (text)\n${global.config.PREFIX}info 
-`, attachment: fs.createReadStream(__dirname + "/Nayan/joinmp4/salam.mp4")} ,threadID));
+`, attachment: fs.createReadStream(__dirname + "/join/salam.mp4")} ,threadID));
 	}
 	else {
 		try {
@@ -58,7 +58,7 @@ module.exports.run = async function({ api, event }) {
 			let { threadName, participantIDs } = await api.getThreadInfo(threadID);
 
 			const threadData = global.data.threadData.get(parseInt(threadID)) || {};
-			const path = join(__dirname, "Nayan", "salam.mp4");
+			const path = join(__dirname, "join", "salam.mp4");
 			const pathGif = join(path, `${threadID}.gif`);
 
 			var mentions = [], nameArray = [], memLength = [], i = 0;
