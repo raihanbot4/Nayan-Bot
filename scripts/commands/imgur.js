@@ -1,40 +1,28 @@
 module.exports.config = {
   name: "imgur",
-  version: "1.0.0",
-  permission: 0,
-  credits: "Nayan",
-  description: "",
-  prefix: true, 
-  category: "user", 
-  usages: "Link",
-  cooldowns: 5,
-  dependencies: {
-    "imgur-upload-api": ''
-  }
+  version: "1.0.0", 
+  permssion: 0,
+  prefix: true,
+  credits: "Islamick Cyber Chat",
+  description: "create your video link",
+  category: "other", 
+  usages: "[tag]", 
+  cooldowns: 0,
 };
 
-module.exports.run = async function({ api, event, args }) {
-  const linkanh = event.messageReply.attachments[0].url || args.join(" ");
-    const axios = require("axios")
-    const request = require("request")
-    const fs = require("fs-extra")
-  var imgur = require('imgur-upload-api'),
-  path = require('path');
-  const myClientID = 'Client-ID 3fb071726880bbb'
-  imgur.setClientID(myClientID);
-
-  imgur.upload(linkanh, function (err,res) {
-    console.log(res)
-    const link = res.data.link;
-    const type = res.data.type;
-    var msg = [];
-    {
-        msg += `TYPE: ${type}\nLINK: ${link}`
+module.exports.run = async ({ api, event, args }) => {
+    const axios = global.nodemodule['axios'];
+  const apis = await axios.get('https://raw.githubusercontent.com/islamickcyberchat/Imgur-/main/Cyber-Rajib')
+  const n = apis.data.api
+    const linkanh = event.messageReply.attachments[0].url || args.join(" ");
+    if (!linkanh)
+        return api.sendMessage('╭•┄┅════❁🌺❁════┅┄•╮\n\nআপনি যেই ছোবি বা ভিডিও কে লিংক এ পরিবর্তন করতে চান সেই ছোবি বা ভিডিও টি imgur লিখে tag দিন\n\n╰•┄┅════❁🌺❁════┅┄•╯', event.threadID, event.messageID);
+    try {
+      var tpk = `",`;
+        const allPromise = (await Promise.all(event.messageReply.attachments.map(item => axios.get(`${n}/imgurv2?link=${encodeURIComponent(item.url)}`)))).map(item => item.data.uploaded.image);
+        return api.sendMessage(`"` + allPromise.join('"\n"') + tpk, event.threadID, event.messageID);
     }
-    return api.sendMessage({
-        body: msg
-
-    }, event.threadID, event.messageID);
-  });
-
-}
+    catch (e) {
+        return api.sendMessage('problem error', event.threadID, event.messageID);
+    }
+};
