@@ -1,4 +1,3 @@
-
 const axios = require("axios");
 const baseApiUrl = async () => {
   const base = await axios.get(
@@ -31,7 +30,7 @@ const shortLang = "en";
 const lang = languagesMap[shortLang];
 
 module.exports.config = {
-  name: "jerry",
+  name: "bby",
   version: "1.0.0",
   hasPermssion: 0,
   credits: "dipto",
